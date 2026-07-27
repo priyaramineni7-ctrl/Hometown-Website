@@ -49,7 +49,7 @@ function EventCard({ event }: { event: EventItem }) {
 
 export function EventsSection() {
   return (
-    <section className="border-t border-border bg-secondary">
+    <section id="events" className="border-t border-border bg-secondary scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
         <SectionEyebrow className="mb-3">Events Calendar</SectionEyebrow>
         <SectionHeading className="mb-12">

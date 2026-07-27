@@ -2,19 +2,19 @@ import { MapPin, Music2 } from "lucide-react";
 import { serif } from "@/lib/fonts";
 
 const EXPLORE_LINKS = [
-  "News & Updates",
-  "Events Calendar",
-  "Eat & Drink",
-  "Parks & Trails",
-  "Getting Around",
+  { label: "News & Updates", href: "#news" },
+  { label: "Events Calendar", href: "#events" },
+  { label: "Eat & Drink", href: "#eat-drink" },
+  { label: "Parks & Trails", href: "#parks" },
+  { label: "City Services", href: "#city-services" },
 ];
 
 const RESOURCE_LINKS = [
-  "Loudoun County Gov.",
-  "LCPS Schools",
-  "WMATA Silver Line",
-  "Brambleton HOA",
-  "Dulles Airport",
+  { label: "Loudoun County Gov.", href: "https://www.loudoun.gov/" },
+  { label: "LCPS Schools", href: "https://www.lcps.org/" },
+  { label: "WMATA Silver Line", href: "https://www.wmata.com/ridertools/line/silver" },
+  { label: "Brambleton HOA", href: "https://brambletonhoa.com/" },
+  { label: "Dulles Airport", href: "https://www.flydulles.com/" },
 ];
 
 export function Footer() {
@@ -43,12 +43,12 @@ export function Footer() {
             </h4>
             <ul className="flex flex-col gap-2.5">
               {EXPLORE_LINKS.map((l) => (
-                <li key={l}>
+                <li key={l.label}>
                   <a
-                    href="#"
+                    href={l.href}
                     className="text-xs text-muted-foreground hover:text-foreground font-light transition-colors"
                   >
-                    {l}
+                    {l.label}
                   </a>
                 </li>
               ))}
@@ -62,12 +62,14 @@ export function Footer() {
             </h4>
             <ul className="flex flex-col gap-2.5">
               {RESOURCE_LINKS.map((l) => (
-                <li key={l}>
+                <li key={l.label}>
                   <a
-                    href="#"
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-xs text-muted-foreground hover:text-foreground font-light transition-colors"
                   >
-                    {l}
+                    {l.label}
                   </a>
                 </li>
               ))}

@@ -30,7 +30,7 @@ function ParkRow({ park }: { park: ParkItem }) {
 
 export function ParksSection() {
   return (
-    <section className="border-t border-b border-border bg-secondary">
+    <section id="parks" className="border-t border-b border-border bg-secondary scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
         <div className="grid lg:grid-cols-[2fr_3fr] gap-16 items-center">
           {/* Left: copy */}
