@@ -6,12 +6,39 @@ import { NAV_LINKS } from "@/data/nav";
 export function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("News");
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+
+  const goToSection = (href: string) => {
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
+  }, []);
+
+  useEffect(() => {
+    const sections = NAV_LINKS.map((link) => document.querySelector(link.href)).filter(
+      (el): el is Element => el !== null,
+    );
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting);
+        if (visible.length === 0) return;
+        const topMost = visible.reduce((a, b) =>
+          a.boundingClientRect.top < b.boundingClientRect.top ? a : b,
+        );
+        const match = NAV_LINKS.find((link) => link.href === `#${topMost.target.id}`);
+        if (match) setActiveSection(match.label);
+      },
+      { rootMargin: "-80px 0px -70% 0px", threshold: 0 },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -37,17 +64,22 @@ export function NavBar() {
 
           <ul className="hidden lg:flex items-center gap-7">
             {NAV_LINKS.map((link) => (
-              <li key={link}>
-                <button
-                  onClick={() => setActiveSection(link)}
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setActiveSection(link.label);
+                    goToSection(link.href);
+                  }}
                   className={`text-[11px] uppercase tracking-widest transition-colors font-medium ${
-                    activeSection === link
+                    activeSection === link.label
                       ? "text-primary"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  {link}
-                </button>
+                  {link.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -69,16 +101,19 @@ export function NavBar() {
       {menuOpen && (
         <div className="lg:hidden border-t border-border px-6 pb-6 pt-4 flex flex-col gap-4 bg-background">
           {NAV_LINKS.map((l) => (
-            <button
-              key={l}
-              onClick={() => {
-                setActiveSection(l);
+            <a
+              key={l.label}
+              href={l.href}
+              onClick={(e) => {
+                e.preventDefault();
+                setActiveSection(l.label);
                 setMenuOpen(false);
+                requestAnimationFrame(() => requestAnimationFrame(() => goToSection(l.href)));
               }}
               className="text-left text-sm text-foreground/70 uppercase tracking-widest"
             >
-              {l}
-            </button>
+              {l.label}
+            </a>
           ))}
         </div>
       )}
