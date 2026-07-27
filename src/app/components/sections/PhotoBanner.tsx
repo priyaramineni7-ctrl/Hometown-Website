@@ -1,5 +1,6 @@
 import { SectionEyebrow } from "@/app/components/shared/SectionEyebrow";
 import { serif } from "@/lib/fonts";
+import bannerImage from "@/imports/one-loudoun-holiday-night.jpg";
 
 export function PhotoBanner() {
   return (
@@ -8,8 +9,8 @@ export function PhotoBanner() {
       style={{ height: "50vh", minHeight: "320px" }}
     >
       <img
-        src="https://images.unsplash.com/photo-1503432697506-6986abec65ca?w=1600&h=700&fit=crop&auto=format"
-        alt="People gathered on an urban street in the evening"
+        src={bannerImage}
+        alt="Crowds gathered at One Loudoun for a nighttime holiday event"
         loading="lazy"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
