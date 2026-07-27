@@ -40,3 +40,7 @@ src/
         ├── sections/   # One file per page section
         └── shared/     # Design-system primitives (Eyebrow, Heading, Container)
 ```
+
+## License
+
+MIT — see [LICENSE](./LICENSE).
