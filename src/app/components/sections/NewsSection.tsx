@@ -6,22 +6,29 @@ import { serif } from "@/lib/fonts";
 
 function NewsArticle({ item }: { item: NewsItem }) {
   return (
-    <article className="flex items-start gap-6 py-5 group cursor-pointer hover:bg-secondary/40 px-4 -mx-4 transition-colors">
-      <span className="flex-shrink-0 text-[10px] uppercase tracking-widest text-primary font-semibold border border-primary/30 px-2 py-1 mt-0.5">
-        {item.tag}
-      </span>
-      <div className="flex-1 min-w-0">
-        <p
-          className="text-base lg:text-lg text-foreground leading-snug group-hover:text-primary/90 transition-colors"
-          style={serif}
-        >
-          {item.headline}
-        </p>
-      </div>
-      <div className="flex-shrink-0 flex items-center gap-1.5 text-muted-foreground mt-1">
-        <Clock size={11} />
-        <span className="text-[11px] whitespace-nowrap">{item.time}</span>
-      </div>
+    <article>
+      <a
+        href={item.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-start gap-6 py-5 group cursor-pointer hover:bg-secondary/40 px-4 -mx-4 transition-colors"
+      >
+        <span className="flex-shrink-0 text-[10px] uppercase tracking-widest text-primary font-semibold border border-primary/30 px-2 py-1 mt-0.5">
+          {item.tag}
+        </span>
+        <div className="flex-1 min-w-0">
+          <p
+            className="text-base lg:text-lg text-foreground leading-snug group-hover:text-primary/90 transition-colors"
+            style={serif}
+          >
+            {item.headline}
+          </p>
+        </div>
+        <div className="flex-shrink-0 flex items-center gap-1.5 text-muted-foreground mt-1">
+          <Clock size={11} />
+          <span className="text-[11px] whitespace-nowrap">{item.time}</span>
+        </div>
+      </a>
     </article>
   );
 }
@@ -35,7 +42,9 @@ export function NewsSection() {
           <SectionHeading>What's happening</SectionHeading>
         </div>
         <a
-          href="#"
+          href="https://theburn.com/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden sm:flex items-center gap-1.5 text-[11px] uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
         >
           All stories <ArrowUpRight size={12} />

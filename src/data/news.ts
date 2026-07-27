@@ -2,31 +2,34 @@ export interface NewsItem {
   tag: string;
   headline: string;
   time: string;
+  url: string;
 }
 
 export const NEWS: NewsItem[] = [
   {
     tag: "Infrastructure",
     headline:
-      "Silver Line Phase 2 ridership up 34% — Ashburn Station among top performers in Loudoun",
-    time: "2 hours ago",
+      "Report links Loudoun County data center grid demand to power flickering across half the U.S.",
+    time: "1 day ago",
+    url: "https://www.nbcwashington.com/news/local/northern-virginia/how-loudoun-county-data-centers-are-linked-to-power-flickering-across-half-the-u-s/4134124/",
+  },
+  {
+    tag: "Food & Drink",
+    headline: "One Loudoun expansion brings Bartaco to Ashburn",
+    time: "3 days ago",
+    url: "https://theburn.com/2026/07/23/update-on-new-bartaco-coming-to-loudoun-county/",
+  },
+  {
+    tag: "Business",
+    headline: "Tune Up The Manly Salon officially opens its doors in Ashburn",
+    time: "4 days ago",
+    url: "https://theburn.com/2026/07/22/tune-up-salon-for-men-opens-its-doors-in-ashburn/",
   },
   {
     tag: "Community",
     headline:
-      "Brambleton Town Center's summer concert series announces full lineup through September",
-    time: "Yesterday",
-  },
-  {
-    tag: "Parks",
-    headline:
-      "New 12-mile trail extension connecting Brambleton to W&OD Trail breaks ground this fall",
-    time: "3 days ago",
-  },
-  {
-    tag: "Food & Drink",
-    headline:
-      "Lost Rhino Brewing opens second taproom in One Loudoun after record-breaking expansion",
-    time: "1 week ago",
+      "Ashburn homeowner continues fight against planned 185-foot transmission line for data centers",
+    time: "6 days ago",
+    url: "https://www.wusa9.com/article/news/local/virginia/ashburn-homeowner-fights-transmission-line-power-data-center/65-4d8c773f-7388-43cb-8802-d4124f3b0720",
   },
 ];
