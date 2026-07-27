@@ -7,7 +7,9 @@ function ServiceCard({ service }: { service: ServiceItem }) {
   const Icon = service.icon;
   return (
     <a
-      href="#"
+      href={service.url}
+      target="_blank"
+      rel="noopener noreferrer"
       className="bg-card p-7 group hover:bg-secondary transition-colors flex items-start gap-4"
     >
       <div className="w-9 h-9 border border-border flex items-center justify-center flex-shrink-0 group-hover:border-primary group-hover:text-primary text-muted-foreground transition-colors">
