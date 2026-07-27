@@ -33,7 +33,7 @@ function ServiceCard({ service }: { service: ServiceItem }) {
 
 export function CityServicesSection() {
   return (
-    <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <section id="city-services" className="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28 scroll-mt-20">
       <SectionEyebrow className="mb-3">City Services</SectionEyebrow>
       <SectionHeading className="mb-12">We work for you.</SectionHeading>
 

@@ -28,7 +28,7 @@ function NewsArticle({ item }: { item: NewsItem }) {
 
 export function NewsSection() {
   return (
-    <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <section id="news" className="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28 scroll-mt-20">
       <div className="flex items-end justify-between mb-10">
         <div>
           <SectionEyebrow className="mb-3">Local News</SectionEyebrow>

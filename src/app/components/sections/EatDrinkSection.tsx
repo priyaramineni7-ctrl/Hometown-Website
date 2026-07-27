@@ -47,7 +47,7 @@ function RestaurantRow({ place, index }: { place: RestaurantItem; index: number 
 
 export function EatDrinkSection() {
   return (
-    <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <section id="eat-drink" className="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28 scroll-mt-20">
       <div className="grid lg:grid-cols-[1fr_2fr] gap-12 items-start">
         {/* Left sticky column */}
         <div className="lg:sticky lg:top-24">
