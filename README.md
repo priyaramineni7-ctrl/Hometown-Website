@@ -2,6 +2,8 @@
 
 Community guide for Ashburn and Brambleton, Virginia — covering local events, dining, parks, transit, and city services.
 
+![Screenshot of the Ashburn · Brambleton community guide homepage](./screenshot.png)
+
 ## Running the project
 
 ```bash
