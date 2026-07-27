@@ -89,7 +89,12 @@ export function HeroSection() {
             </div>
           </HeroSnapshotCard>
 
-          <div className="bg-primary p-5 flex items-center justify-between group cursor-pointer hover:bg-primary/90 transition-colors">
+          <a
+            href="https://brambletonhoa.com/211/Event-Information"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary p-5 flex items-center justify-between group cursor-pointer hover:bg-primary/90 transition-colors"
+          >
             <div>
               <p className="text-[10px] uppercase tracking-widest text-primary-foreground/60 font-medium mb-0.5">
                 Full calendar
@@ -102,7 +107,7 @@ export function HeroSection() {
               size={18}
               className="text-primary-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
             />
-          </div>
+          </a>
         </div>
       </div>
     </section>

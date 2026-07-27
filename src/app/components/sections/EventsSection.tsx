@@ -63,9 +63,14 @@ export function EventsSection() {
         </div>
 
         <div className="mt-8 flex justify-center">
-          <button className="flex items-center gap-2 border border-border px-8 py-3 text-[11px] uppercase tracking-widest text-muted-foreground hover:border-foreground/30 hover:text-foreground transition-colors">
+          <a
+            href="https://brambletonhoa.com/211/Event-Information"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 border border-border px-8 py-3 text-[11px] uppercase tracking-widest text-muted-foreground hover:border-foreground/30 hover:text-foreground transition-colors"
+          >
             See full events calendar <CalendarDays size={13} />
-          </button>
+          </a>
         </div>
       </div>
     </section>
