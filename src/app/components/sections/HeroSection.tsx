@@ -58,17 +58,22 @@ export function HeroSection() {
         {/* Right: live snapshot */}
         <div className="flex flex-col gap-3">
           <HeroSnapshotCard label="Happening now">
-            <div className="flex items-start gap-3">
+            <a
+              href="https://loudouncountyfair.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 group"
+            >
               <div className="w-2 h-2 rounded-full bg-primary mt-1.5 flex-shrink-0 animate-pulse" />
               <div>
-                <p className="text-sm font-medium text-foreground leading-snug">
+                <p className="text-sm font-medium text-foreground leading-snug group-hover:text-primary transition-colors">
                   Loudoun County Fair · All this week
                 </p>
                 <p className="text-xs text-muted-foreground font-light mt-0.5">
                   Loudoun County Fairgrounds · Rides, livestock, live music
                 </p>
               </div>
-            </div>
+            </a>
           </HeroSnapshotCard>
 
           <HeroSnapshotCard label="This weekend">
