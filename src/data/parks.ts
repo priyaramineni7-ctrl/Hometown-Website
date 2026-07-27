@@ -20,7 +20,7 @@ export const PARK_SPOTS: ParkItem[] = [
   },
   {
     name: "Claude Moore Park",
-    miles: "40 acres",
+    miles: "357 acres",
     type: "Pool, courts, rec center",
     url: "https://www.loudoun.gov/1285/Claude-Moore-Park",
   },
