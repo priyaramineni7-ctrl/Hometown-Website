@@ -74,17 +74,37 @@ export function HeroSection() {
           <HeroSnapshotCard label="This weekend">
             <div className="flex flex-col gap-2.5">
               {[
-                { t: "Farmers Market",        s: "Brambleton Town Center · Sat 8am" },
-                { t: "Movies at Town Center",  s: "Brambleton Lawn · Fri at dusk" },
-                { t: "Trivia Night",           s: "Lost Rhino Brewing · Thu 7pm" },
-              ].map(({ t, s }) => (
-                <div key={t} className="flex items-center justify-between gap-4">
+                {
+                  t: "Farmers Market",
+                  s: "Brambleton Town Center · Sun 9:00am–1:00pm",
+                  href: "https://eatloco.org/brambleton-2/",
+                },
+                {
+                  t: "Movies at Town Center",
+                  s: "Brambleton Lawn · Fri at dusk",
+                  href: "https://www.eventeny.com/events/brambletonmovieonthegreen-29841/",
+                },
+                {
+                  t: "Live Music at AhSo",
+                  s: "Brambleton Town Center · Fri & Sat 6:30pm",
+                  href: "https://www.ahsoresto.com/",
+                },
+              ].map(({ t, s, href }) => (
+                <a
+                  key={t}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between gap-4 group"
+                >
                   <div>
-                    <p className="text-xs font-medium text-foreground">{t}</p>
+                    <p className="text-xs font-medium text-foreground group-hover:text-primary transition-colors">
+                      {t}
+                    </p>
                     <p className="text-[11px] text-muted-foreground font-light">{s}</p>
                   </div>
                   <ChevronRight size={12} className="text-muted-foreground flex-shrink-0" />
-                </div>
+                </a>
               ))}
             </div>
           </HeroSnapshotCard>
