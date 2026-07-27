@@ -6,7 +6,12 @@ import { serif } from "@/lib/fonts";
 
 function RestaurantRow({ place, index }: { place: RestaurantItem; index: number }) {
   return (
-    <div className="py-6 group cursor-pointer hover:bg-secondary/40 px-4 -mx-4 transition-colors flex items-start gap-5">
+    <a
+      href={place.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="py-6 group cursor-pointer hover:bg-secondary/40 px-4 -mx-4 transition-colors flex items-start gap-5"
+    >
       <span className="text-[10px] text-muted-foreground tabular-nums pt-1 w-4 flex-shrink-0">
         {String(index + 1).padStart(2, "0")}
       </span>
@@ -36,7 +41,7 @@ function RestaurantRow({ place, index }: { place: RestaurantItem; index: number 
           {place.note}
         </p>
       </div>
-    </div>
+    </a>
   );
 }
 
