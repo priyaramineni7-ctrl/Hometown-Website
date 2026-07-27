@@ -84,9 +84,14 @@ export function NavBar() {
             ))}
           </ul>
 
-          <button className="hidden lg:flex items-center gap-1.5 px-4 py-1.5 border border-primary text-primary text-[11px] font-semibold uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors">
+          <a
+            href="https://www.loudoun.gov/3055/Report-an-Issue"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:flex items-center gap-1.5 px-4 py-1.5 border border-primary text-primary text-[11px] font-semibold uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
             311 Services
-          </button>
+          </a>
 
           <button
             className="lg:hidden text-foreground"
